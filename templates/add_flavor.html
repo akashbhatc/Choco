@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Flavor</title>
+</head>
+<body>
+    <h2>Add Flavor</h2>
+    <form method="POST">
+        <label for="flavor">Flavor:</label>
+        <input type="text" id="flavor" name="flavor">
+        <button type="submit">Add Flavor</button>
+    </form>
+    {% if error %}
+        <p style="color:red">{{ error }}</p>
+    {% endif %}
+    {% if message %}
+        <p style="color:green">{{ message }}</p>
+    {% endif %}
+    <a href="{{ url_for('list_flavors') }}">see all Flavor</a>
+</body>
+</html>

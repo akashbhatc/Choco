@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flavor List</title>
+</head>
+<body>
+    <h2>List of Seasonal Flavors</h2>
+    <ul>
+        {% for flavor in flavors %}
+            <li>
+                {{ flavor.flavor }}
+                <form action="{{ url_for('delete_flavor', flavor_id=flavor.id) }}" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_flavor') }}">Add New Flavor</a>
+</body>
+</html>

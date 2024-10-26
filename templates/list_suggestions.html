@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suggestion List</title>
+</head>
+<body>
+    <h2>List of Customer Suggestions</h2>
+    <ul>
+        {% for suggestion in suggestions %}
+            <li>
+                {{ suggestion.name }} - {{ suggestion.flavor }} - {{ suggestion.allergy_concerns }}
+                <form action="{{ url_for('delete_suggestion', suggestion_id=suggestion.id) }}" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
